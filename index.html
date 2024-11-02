@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html dir="rtl" lang="fa">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>مدیریت درخواست‌ها</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>سیستم مدیریت درخواست‌ها</h1>
+        </header>
+        
+        <div class="request-form">
+            <h2>ثبت درخواست جدید</h2>
+            <form id="requestForm">
+                <div class="form-group">
+                    <label for="title">عنوان درخواست:</label>
+                    <input type="text" id="title" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="department">دپارتمان:</label>
+                    <select id="department" required>
+                        <option value="">انتخاب کنید</option>
+                        <option value="it">فناوری اطلاعات</option>
+                        <option value="hr">منابع انسانی</option>
+                        <option value="finance">مالی</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="priority">اولویت:</label>
+                    <select id="priority" required>
+                        <option value="low">کم</option>
+                        <option value="medium">متوسط</option>
+                        <option value="high">زیاد</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="description">توضیحات:</label>
+                    <textarea id="description" required></textarea>
+                </div>
+                
+                <button type="submit" class="submit-btn">ثبت درخواست</button>
+            </form>
+        </div>
+        
+        <div class="requests-list">
+            <h2>لیست درخواست‌ها</h2>
+            <div class="filters">
+                <select id="filterPriority">
+                    <option value="">همه اولویت‌ها</option>
+                    <option value="low">کم</option>
+                    <option value="medium">متوسط</option>
+                    <option value="high">زیاد</option>
+                </select>
+                <select id="filterDepartment">
+                    <option value="">همه دپارتمان‌ها</option>
+                    <option value="it">فناوری اطلاعات</option>
+                    <option value="hr">منابع انسانی</option>
+                    <option value="finance">مالی</option>
+                </select>
+            </div>
+            <div id="requestsList"></div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
